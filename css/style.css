@@ -39,8 +39,9 @@ a {
     text-decoration: none;
 }
 
-img {
+img, svg {
     max-width: 100%;
+    height: auto;
 }
 
 body {
@@ -108,11 +109,12 @@ body {
 }
 
 .header__container {
+    max-width: 1200px;
     display: flex;
     gap: 30px;
+    margin: 0 auto;
+    padding: 10px 30px;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 .header__title {
@@ -478,4 +480,8 @@ td {
         justify-content: left;
     }
 
+    .social-link {
+        width: 30px;
+        height: 30px;
+    }
 }
