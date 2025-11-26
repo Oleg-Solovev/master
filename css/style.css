@@ -1,0 +1,481 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Medium.woff2") format("woff2"), url("../fonts/Poppins-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Regular.woff2") format("woff2"), url("../fonts/Poppins-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    min-width: 320px;
+    font-family: "Poppins", "Arial", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    background-color: #c7ecbb;
+    background-image: url(../img/body-background.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.main {
+    margin-top: 75px;
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+}
+
+.global-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+
+.global-section-title {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: #3d8627;
+}
+
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(100%);
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(180deg, #fff 85%, rgba(255, 255, 255, 0) 100%);
+}
+
+.header__container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.header__title {
+    margin: 0;
+    text-align: center;
+    color: #3d8627;
+    font-size: 22px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.header__logo-link {
+    margin-right: auto;
+}
+
+
+/* кнопка бургер-меню */
+.header__burger-btn {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    z-index: 100;
+    transform: translateY(-5px);
+}
+
+.header__burger-btn span {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #3d8627;
+    left: 5px;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.header__burger-btn span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.header__burger-btn span:nth-child(3) {
+    transform: translateY(10px);
+}
+
+.header.open .header__burger-btn span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.header.open .header__burger-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.header.open .header__burger-btn span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.header__nav {
+    margin-right: auto;
+    max-width: 600px;
+    width: 100%;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__link {
+    font-size: 18px;
+    color: #3d8627;
+}
+
+.link {
+    transition: color 0.3s ease-in-out;
+    border: 0;
+}
+
+.link:focus-visible {
+    color: #4FAD33;
+}
+
+.link:active {
+    color: #4FAD33;
+}
+
+.header__title-wrap {
+    display: flex;
+    align-items: center;
+}
+
+/* главная */
+
+.about-me__wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.about-me__description {
+    max-width: 1000px;
+    width: 100%;
+    min-height: 130px;
+}
+
+.about-me__text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 200%;
+    text-indent: 2em;
+    text-align: justify;
+}
+
+.about-me__text-XL {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.about-me__foto {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    background-image: url(../img/foto.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 15px;
+}
+
+/* услуги и цены */
+
+table {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    text-align: center;
+    border-collapse: collapse;
+    margin: auto;
+    /* box-shadow: 0px 0px 5px #999; */
+}
+
+th {
+    color: #fff;
+    background-color: #4FAD33;
+}
+
+th,
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    text-align: left;
+}
+
+
+/* Фотографии */
+
+
+.gallery {
+    max-width: 100%;
+    min-height: 250px;
+    position: relative;
+}
+
+.gallery-swiper {
+    padding: 0 23px;
+}
+
+.gallery__btn-prev {
+    left: -5px;
+}
+
+.gallery__btn-next {
+    right: -5px;
+}
+
+.gallery__link {
+    display: block;
+    border-radius: 7px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__btn {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.gallery__btn svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    fill: #3d8627;
+    transition: fill 0.3s ease-in-out;
+}
+
+.gallery__btn:focus-visible {
+    outline: 2px dashed #4FAD33;
+}
+
+.gallery__btn:hover svg {
+    fill: #4FAD33;
+}
+
+.gallery__btn:active svg {
+    fill: #d07eaa;
+}
+
+.swiper-button-disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/* Отзывы */
+
+
+
+/* Футер */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.footer__container {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    gap: 20px;
+    padding: 3vw;
+    background-color: transparent;
+}
+
+.social-link svg path,
+.social-link svg {
+    stroke: #3d8627;
+    transition: stroke 0.3s ease-in-out;
+}
+
+.social-link-VK svg {
+    fill: #3d8627;
+    transition: fill 0.3s ease-in-out;
+}
+
+.social-link:focus-visible {
+    outline: 2px dashed #3d8627;
+}
+
+.social-link:hover svg path,
+.social-link:hover svg {
+    stroke: #67c94a;
+}
+
+.social-link-VK:hover svg {
+    fill: #67c94a;
+}
+
+.social-link:active svg path,
+.social-link:active svg {
+    stroke: #c25991;
+}
+
+.social-link-VK:active svg {
+    fill: #c25991;
+}
+
+/* Медиазапросы для мобильных экранов */
+
+@media (max-width: 800px) {
+    .container {
+        padding: 20px;
+        justify-content: center;
+    }
+
+    .global-section-title {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    .header__logo-link {
+        display: none;
+    }
+
+    .nav__list {
+        display: block;
+    }
+
+    .nav__link {
+        font-size: 21px;
+        display: block;
+        padding: 10px 0;
+    }
+
+    .about-me__foto {
+        width: 100px;
+        height: 100px;
+    }
+
+    .works__list {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .works__item-wrap {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .works__description {
+        font-size: 12px;
+    }
+
+
+    .header__burger-btn {
+        display: block;
+        cursor: pointer;
+    }
+
+    .header__nav {
+        position: absolute;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        border-radius: 0 10px 10px 0;
+        background-color: #88d571;
+        padding: 75px 20px 20px 20px;
+        transition: transform 0.5s;
+        z-index: 10;
+    }
+
+    .header.open .header__nav {
+        transform: translateX(100%);
+    }
+
+    .social-link {
+        width: 30px;
+        height: 30px;
+    }
+
+    .about-me__wrap {
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+
+}
