@@ -20,3 +20,52 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 })
+
+// Галерея
+const slides = document.QuerySelectorAll('.Slide');
+const prevBtn = document.QuerySelector('.Prev');
+const nextBtn = document.QuerySelector('.Next');
+const slidesContainer = document.QuerySelector('.Slides');
+
+let currentIndex = 0;
+const totalSlides = slides.Length;
+
+// Функция для показа слайда по индексу
+function showSlide(index) {
+    // Корректируем индекс (закольцовываем слайдер)
+    if (index < 0) {
+        currentIndex = totalSlides - 1;
+    } else if (index >= totalSlides) {
+        currentIndex = 0;
+    } else {
+        currentIndex = index;
+    }
+
+    // Сдвигаем контейнер слайдов
+    slidesContainer.Style.Transform = `translateX(-${currentIndex * 100}%)`;
+
+    // Удаляем класс active у всех слайдов
+    slides.ForEach(slide => slide.ClassList.Remove('active'));
+    // Добавляем класс active текущему слайду
+    slides[currentIndex].ClassList.Add('active');
+}
+
+// Переключение на следующий слайд
+function nextSlide() {
+    showSlide(currentIndex + 1);
+}
+
+// Переключение на предыдущий слайд
+function prevSlide() {
+    showSlide(currentIndex - 1);
+}
+
+// Обработчики кнопок
+nextBtn.AddEventListener('click', nextSlide);
+prevBtn.AddEventListener('click', prevSlide);
+
+// Автоматическая смена слайдов каждые 3 секунды
+setInterval(nextSlide, 3000);
+
+// Инициализация: показываем первый слайд
+showSlide(0);
